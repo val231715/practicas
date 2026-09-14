@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Presentación Web</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #ffffff !important;
+    }
+    .dark-mode .card {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+      border-color: #333;
+    }
+  </style>
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center min-vh-100">
+
+  <div class="container" style="max-width: 500px;">
+    <div class="card shadow-lg p-4 text-center rounded-4">
+      <!-- Información Personal -->
+      <h2 class="fw-bold mb-1">¡Hola, soy un Estudiante Web!</h2>
+      <p class="text-secondary small mb-3">Desarrollador en formación | Apasionado por la tecnología</p>
+      <p class="card-text">Bienvenido a mi primera página interactiva desarrollada con asistencia de IA.</p>
+      
+      <!-- Habilidades -->
+      <div class="mb-3">
+        <span class="badge bg-primary">HTML5</span>
+        <span class="badge bg-success">CSS3</span>
+        <span class="badge bg-warning text-dark">JavaScript</span>
+        <span class="badge bg-info text-dark">Prompting IA</span>
+      </div>
+
+      <!-- Botón Interactivo Asistido por IA -->
+      <button id="btnTheme" class="btn btn-outline-primary rounded-pill mt-2">
+        🌙 Cambiar Modo Oscuro
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript Interactivo -->
+  <script>
+    const btnTheme = document.getElementById('btnTheme');
+    
+    // Función interactiva para alternar tema claro/oscuro
+    btnTheme.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      
+      if (document.body.classList.contains('dark-mode')) {
+        btnTheme.textContent = '☀️ Cambiar Modo Claro';
+        btnTheme.classList.replace('btn-outline-primary', 'btn-outline-warning');
+      } else {
+        btnTheme.textContent = '🌙 Cambiar Modo Oscuro';
+        btnTheme.classList.replace('btn-outline-warning', 'btn-outline-primary');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
